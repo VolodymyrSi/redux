@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AllQuestions />}></Route>
-        <Route path="/answerpage" element={<AnswersPage />}></Route>
+        <Route path="answers/:questionId" element={<AnswersPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
