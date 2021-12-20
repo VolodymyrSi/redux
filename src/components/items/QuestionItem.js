@@ -1,5 +1,5 @@
-export const QuestionItem = () => {
-    return (
-        <div>A single question</div>
-    )
-}
+export const QuestionItem = ({question}) => {
+  return <div>{question.title}</div>;
+};
+
+
