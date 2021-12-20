@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AllQuestions } from "./pages/AllQuestions";
-import { ExactQuestion } from "./pages/ExactQuestion";
+import { AllQuestions } from "./components/pages/AllQuestions";
+import { ExactQuestion } from "./components/pages/ExactQuestion";
 
 function App() {
   return (
