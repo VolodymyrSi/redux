@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchAnswers } from "../../ApiRequests/answersApi";
 import { AnswerItem } from "../items/AnswerItem";
-import {Breadcrumb, Layout, Menu} from "antd";
-import {Content, Footer, Header} from "antd/es/layout/layout";
+import { Breadcrumb, Layout, Menu } from "antd";
+import { Content, Footer, Header } from "antd/es/layout/layout";
+import LoadingSpinner from "../elements/LoadingSpinner";
+import PageFooter from "../elements/PageFooter";
 
 export const AnswersPage = () => {
   const dispatch = useDispatch();
@@ -21,24 +23,23 @@ export const AnswersPage = () => {
   }, []);
 
   return (
-  <Layout className="layout">
-    <Header>
-      <div className="logo" />
-      <Menu theme="dark" mode="horizontal">
-        Answers page
-      </Menu>
-    </Header>
-    <Content style={{ padding: "0 50px" }}>
-      <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
-      <div className="site-layout-content">
-        {answers?.items?.map((answer) => (
+    <Layout className="layout">
+      <Header>
+        <div className="logo" />
+        <Menu theme="dark" mode="horizontal">
+          Answers page
+        </Menu>
+      </Header>
+      <Content style={{ padding: "0 50px" }}>
+        <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
+        <div className="site-layout-content">
+          {answers?.items?.map((answer) => (
             <AnswerItem data={answer} />
-        ))}
-      </div>
-    </Content>
-    <Footer style={{ textAlign: "center" }}>
-      Ant Design ©2018 Created by Ant UED
-    </Footer>
-  </Layout>
+          ))}
+          {!answers.items && <LoadingSpinner />}
+        </div>
+      </Content>
+      <PageFooter />
+    </Layout>
   );
 };

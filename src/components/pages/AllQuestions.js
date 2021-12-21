@@ -4,6 +4,8 @@ import { QuestionItem } from "../items/QuestionItem";
 import { useEffect } from "react";
 
 import { Layout, Menu, Breadcrumb } from "antd";
+import LoadingSpinner from "../elements/LoadingSpinner";
+import PageFooter from "../elements/PageFooter";
 
 const { Header, Content, Footer } = Layout;
 
@@ -33,14 +35,11 @@ export const AllQuestions = (props) => {
               ))}
             </div>
           ) : (
-            <div>there are no qs</div>
+            <LoadingSpinner />
           )}
-          <div>All questions page</div>
         </div>
       </Content>
-      <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2018 Created by Ant UED
-      </Footer>
+      <PageFooter />
     </Layout>
   );
 };
