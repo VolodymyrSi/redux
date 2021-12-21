@@ -1,6 +1,6 @@
 import "antd/dist/antd.css";
 import { Pagination, Select } from "antd";
-import { fetchQuestions } from "../../../ApiRequests/questionsApi";
+import { fetchQuestions } from "../../ApiRequests/questionsApi";
 import { useDispatch, useSelector } from "react-redux";
 import { Option } from "antd/es/mentions";
 
@@ -29,7 +29,7 @@ const CustomPagination = () => {
       <Select
         defaultValue="activity"
         style={{ width: 120, marginLeft: 10 }}
-        onChange={handleChange}
+        onChange={(value) => handleChange(1, 20, value)}
       >
         <Option value="activity">Activity</Option>
         <Option value="votes">Votes</Option>
