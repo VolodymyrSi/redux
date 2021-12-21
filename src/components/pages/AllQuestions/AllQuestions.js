@@ -4,9 +4,9 @@ import { Layout } from "antd";
 
 import { fetchQuestions } from "../../../ApiRequests/questionsApi";
 import QuestionItem from "../../items/QuestionItem/QuestionItem";
-import LoadingSpinner from "../../elements/LoadingSpinner";
+import LoadingSpinner from "../../features/LoadingSpinner";
 import PageFooter from "../PageFooter";
-import CustomPagination from "../../elements/CustomPagination";
+import CustomPagination from "../../features/CustomPagination";
 import QuestionHeader from "./QuestionHeader";
 
 const { Content } = Layout;
