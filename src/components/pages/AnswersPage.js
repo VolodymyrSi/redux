@@ -15,8 +15,6 @@ export const AnswersPage = () => {
   let { questionId } = useParams();
 
   useEffect(() => {
-    console.log("insideUseEffect");
-    console.log(questionId);
     if (!questionId) return;
     dispatch(fetchAnswers(questionId));
     console.log(answers);

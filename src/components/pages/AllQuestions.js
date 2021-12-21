@@ -7,8 +7,9 @@ import { Layout, Menu, Breadcrumb } from "antd";
 import LoadingSpinner from "../elements/LoadingSpinner";
 import PageFooter from "../elements/PageFooter";
 import CustomPagination from "../elements/CustomPagination";
+import QuestionHeader from "../items/QuestionItem/QuestionHeader";
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 export const AllQuestions = (props) => {
   const dispatch = useDispatch();
@@ -20,15 +21,9 @@ export const AllQuestions = (props) => {
 
   return (
     <Layout className="layout">
-      <Header>
-        <div className="logo" />
-        <Menu theme="dark" mode="horizontal">
-          StackOverflow recent questions
-        </Menu>
-      </Header>
+      <QuestionHeader />
       <Content style={{ padding: "0 50px" }}>
-        <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
-        <div className="site-layout-content">
+        <div style={{ margin: "16px 0" }} className="site-layout-content">
           {questions ? (
             <div>
               {questions.items.map((question) => (
