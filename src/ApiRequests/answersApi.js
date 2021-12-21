@@ -1,7 +1,7 @@
 import {addAnswersAction} from "../store/answersReducer";
 
 const answersURL = (questionID) => {
-  return `https://api.stackexchange.com/2.3/questions/${questionID}/answers?order=desc&sort=activity&site=stackoverflow`;
+  return `https://api.stackexchange.com/2.3/questions/${questionID}/answers?order=desc&sort=activity&site=stackoverflow&filter=!nKzQURF6Y5`;
 };
 
 export const fetchAnswers = (questionID) => {
