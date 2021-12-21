@@ -4,7 +4,6 @@ import "antd/dist/antd.css";
 import { Comment, Tooltip, Avatar, Card, Statistic } from "antd";
 import { RiseOutlined, BulbOutlined } from "@ant-design/icons";
 
-
 export const QuestionItem = ({ question }) => {
   return (
     <Card style={{ marginBottom: 20 }}>
@@ -20,12 +19,14 @@ export const QuestionItem = ({ question }) => {
           content={<p style={{ fontSize: 18 }}>{question.title}</p>}
         />
       </Link>
-      <div style={{display:'flex', justifyContent:'flex-end', fontSize: 10}}>
+      <div
+        style={{ display: "flex", justifyContent: "flex-end", fontSize: 10 }}
+      >
         <Statistic
           title="Views"
           value={question.view_count}
           prefix={<RiseOutlined />}
-          style={{marginRight: 10}}
+          style={{ marginRight: 10 }}
         />
         <Statistic
           title="Answers"

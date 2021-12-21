@@ -6,8 +6,9 @@ import { useEffect } from "react";
 import { Layout, Menu, Breadcrumb } from "antd";
 import LoadingSpinner from "../elements/LoadingSpinner";
 import PageFooter from "../elements/PageFooter";
+import CustomPagination from "../elements/CustomPagination";
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 export const AllQuestions = (props) => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ export const AllQuestions = (props) => {
           )}
         </div>
       </Content>
+      {questions && <CustomPagination />}
       <PageFooter />
     </Layout>
   );

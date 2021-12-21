@@ -12,7 +12,7 @@ import {
 export const AnswerItem = ({ data }) => {
   return (
     <>
-      <Card style={{ marginBottom: 20, cursor: 'default' }}>
+      <Card style={{ marginBottom: 20, cursor: "default" }}>
         <Comment
           author={<a>{data.owner.display_name}</a>}
           avatar={
