@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AllQuestions from "./components/pages/AllQuestions";
-import { AnswersPage } from "./components/pages/AnswersPage";
+import AllQuestions from "./components/pages/AllQuestions/AllQuestions";
+import { AnswersPage } from "./components/pages/AnswersPage/AnswersPage";
 
 function App() {
   return (

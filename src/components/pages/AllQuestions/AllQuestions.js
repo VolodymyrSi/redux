@@ -1,13 +1,13 @@
 import { useDispatch, useSelector, connect } from "react-redux";
-import { fetchQuestions } from "../../ApiRequests/questionsApi";
-import { QuestionItem } from "../items/QuestionItem/QuestionItem";
+import { fetchQuestions } from "../../../ApiRequests/questionsApi";
+import { QuestionItem } from "../../items/QuestionItem/QuestionItem";
 import { useEffect } from "react";
 
 import { Layout, Menu, Breadcrumb } from "antd";
-import LoadingSpinner from "../elements/LoadingSpinner";
-import PageFooter from "../elements/PageFooter";
-import CustomPagination from "../elements/CustomPagination";
-import QuestionHeader from "../items/QuestionItem/QuestionHeader";
+import LoadingSpinner from "../../elements/LoadingSpinner";
+import PageFooter from "../PageFooter";
+import CustomPagination from "../../elements/CustomPagination";
+import QuestionHeader from "./QuestionHeader";
 
 const { Content } = Layout;
 

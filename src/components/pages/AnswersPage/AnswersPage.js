@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchAnswers } from "../../ApiRequests/answersApi";
-import { AnswerItem } from "../items/AnswerItem/AnswerItem";
-import { Breadcrumb, Layout, Menu } from "antd";
-import { Content, Header } from "antd/es/layout/layout";
-import LoadingSpinner from "../elements/LoadingSpinner";
-import PageFooter from "../elements/PageFooter";
+import { fetchAnswers } from "../../../ApiRequests/answersApi";
+import { AnswerItem } from "../../items/AnswerItem/AnswerItem";
+import { Layout } from "antd";
+import { Content } from "antd/es/layout/layout";
+import LoadingSpinner from "../../elements/LoadingSpinner";
+import PageFooter from "../PageFooter";
+import AnswersHeader from "./AnswersHeader";
 
 export const AnswersPage = () => {
   const dispatch = useDispatch();
@@ -22,15 +23,9 @@ export const AnswersPage = () => {
 
   return (
     <Layout className="layout">
-      <Header>
-        <div className="logo" />
-        <Menu theme="dark" mode="horizontal">
-          Answers page
-        </Menu>
-      </Header>
-      <Content style={{ padding: "0 50px" }}>
-        <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
-        <div className="site-layout-content">
+      <AnswersHeader />
+      <Content style={{ padding: "0 50px", minHeight: "80vh" }}>
+        <div style={{ margin: "16px 0" }} className="site-layout-content">
           {answers?.items?.map((answer) => (
             <AnswerItem data={answer} />
           ))}
