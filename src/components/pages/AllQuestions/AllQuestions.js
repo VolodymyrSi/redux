@@ -1,9 +1,9 @@
 import { useDispatch, useSelector, connect } from "react-redux";
-import { fetchQuestions } from "../../../ApiRequests/questionsApi";
-import { QuestionItem } from "../../items/QuestionItem/QuestionItem";
 import { useEffect } from "react";
+import { Layout } from "antd";
 
-import { Layout, Menu, Breadcrumb } from "antd";
+import { fetchQuestions } from "../../../ApiRequests/questionsApi";
+import QuestionItem from "../../items/QuestionItem/QuestionItem";
 import LoadingSpinner from "../../elements/LoadingSpinner";
 import PageFooter from "../PageFooter";
 import CustomPagination from "../../elements/CustomPagination";
@@ -22,20 +22,24 @@ export const AllQuestions = (props) => {
   return (
     <Layout className="layout">
       <QuestionHeader />
-      <Content style={{ padding: "0 50px" }}>
-        <div style={{ margin: "16px 0" }} className="site-layout-content">
-          {questions ? (
-            <div>
-              {questions.items.map((question) => (
-                <QuestionItem question={question} key={question.question_id} />
-              ))}
+      {!questions && <LoadingSpinner />}
+      {questions && (
+        <div>
+          <Content style={{ padding: "0 50px" }}>
+            <div style={{ margin: "16px 0" }} className="site-layout-content">
+              <div>
+                {questions.items.map((question) => (
+                  <QuestionItem
+                    question={question}
+                    key={question.question_id}
+                  />
+                ))}
+              </div>
             </div>
-          ) : (
-            <LoadingSpinner />
-          )}
+          </Content>
+          <CustomPagination />
         </div>
-      </Content>
-      {questions && <CustomPagination />}
+      )}
       <PageFooter />
     </Layout>
   );

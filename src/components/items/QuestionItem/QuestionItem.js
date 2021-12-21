@@ -5,7 +5,7 @@ import { Card } from "antd";
 import QuestionStats from "./QuestionStats";
 import QuestionBody from "./QuestionBody";
 
-export const QuestionItem = ({ question }) => {
+const QuestionItem = ({ question }) => {
   return (
     <Card style={{ marginBottom: 20 }}>
       <Link to={`answers/${question.question_id}`}>
@@ -15,3 +15,5 @@ export const QuestionItem = ({ question }) => {
     </Card>
   );
 };
+
+export default QuestionItem;
