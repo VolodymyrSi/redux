@@ -1,6 +1,6 @@
 import "antd/dist/antd.css";
 import { Pagination, Select } from "antd";
-import { fetchQuestions } from "../../ApiRequests/questionsApi";
+import { fetchQuestions } from "../../../ApiRequests/questionsApi";
 import { useDispatch, useSelector } from "react-redux";
 import { Option } from "antd/es/mentions";
 

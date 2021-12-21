@@ -1,13 +1,5 @@
 import parse from "html-react-parser";
-
-import "antd/dist/antd.css";
-import { Comment, Tooltip, Avatar, Card } from "antd";
-import {
-  DislikeOutlined,
-  LikeOutlined,
-  DislikeFilled,
-  LikeFilled,
-} from "@ant-design/icons";
+import { Comment, Avatar, Card } from "antd";
 
 export const AnswerItem = ({ data }) => {
   return (
