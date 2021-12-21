@@ -1,14 +1,27 @@
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
+import "antd/dist/antd.css";
+import { Comment, Tooltip, Avatar } from "antd";
+import {
+  DislikeOutlined,
+  LikeOutlined,
+  DislikeFilled,
+  LikeFilled,
+} from "@ant-design/icons";
 
 export const AnswerItem = ({ data }) => {
   return (
     <>
-      <div>A single answer</div>
-      <img src={data.owner.profile_image} />
-      <p>{data.owner.display_name}</p>
-      <p>{parse(data.body)}</p>
-      <p>likes: {data.up_vote_count}</p>
+      <Comment
+        author={<a>{data.owner.display_name}</a>}
+        avatar={
+          <Avatar
+            src={data.owner.profile_image}
+            alt={data.owner.display_name}
+          />
+        }
+        content={<p>{parse(data.body)}</p>}
+      />
     </>
   );
 };

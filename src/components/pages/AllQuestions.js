@@ -14,10 +14,6 @@ export const AllQuestions = (props) => {
 
   return (
     <>
-      <button onClick={() => dispatch(fetchQuestions())}>
-        Fetch questions
-      </button>
-      <button onClick={() => console.log(questions)}>display in console</button>
       {questions ? (
         <div>
           {questions.items.map((question) => (
