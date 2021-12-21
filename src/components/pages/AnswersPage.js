@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchAnswers } from "../../ApiRequests/answersApi";
 import { AnswerItem } from "../items/AnswerItem";
+import {Breadcrumb, Layout, Menu} from "antd";
+import {Content, Footer, Header} from "antd/es/layout/layout";
 
 export const AnswersPage = () => {
   const dispatch = useDispatch();
@@ -19,12 +21,24 @@ export const AnswersPage = () => {
   }, []);
 
   return (
-    <div>
-      {console.log(answers)}
-      {answers?.items?.map((answer) => (
-        <AnswerItem data={answer} />
-      ))}
-      <p>Exact question page</p>
-    </div>
+  <Layout className="layout">
+    <Header>
+      <div className="logo" />
+      <Menu theme="dark" mode="horizontal">
+        Answers page
+      </Menu>
+    </Header>
+    <Content style={{ padding: "0 50px" }}>
+      <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
+      <div className="site-layout-content">
+        {answers?.items?.map((answer) => (
+            <AnswerItem data={answer} />
+        ))}
+      </div>
+    </Content>
+    <Footer style={{ textAlign: "center" }}>
+      Ant Design ©2018 Created by Ant UED
+    </Footer>
+  </Layout>
   );
 };
