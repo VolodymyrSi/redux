@@ -7,6 +7,11 @@ import {
   setCurrentPage,
   setQuestionsPerPage,
 } from "../../store/questionsReducer";
+import {
+  DEFAULT_ITEMS_PER_PAGE,
+  DEFAULT_PAGE,
+  PAGE_SIZE_OPTIONS,
+} from "../../constants";
 
 const CustomPagination = () => {
   const dispatch = useDispatch();
@@ -29,12 +34,12 @@ const CustomPagination = () => {
         showTotal={(total, range) =>
           `${range[0]}-${range[1]} of ${total} items`
         }
-        defaultPageSize={20}
+        defaultPageSize={DEFAULT_ITEMS_PER_PAGE}
         pageSize={pageSize}
-        defaultCurrent={1}
+        defaultCurrent={DEFAULT_PAGE}
         onChange={handleChange}
         current={currentPageNumber}
-        pageSizeOptions={[5, 10, 15, 20]}
+        pageSizeOptions={PAGE_SIZE_OPTIONS}
       />
       <Select
         defaultValue="activity"
