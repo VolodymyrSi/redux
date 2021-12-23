@@ -1,5 +1,5 @@
 import { Menu } from "antd";
-import {Header} from "antd/es/layout/layout";
+import { Header } from "antd/es/layout/layout";
 
 const QuestionHeader = () => {
   return (

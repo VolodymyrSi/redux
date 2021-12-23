@@ -1,6 +1,6 @@
 import { Avatar, Comment } from "antd";
 
-const QuestionBody = ({question}) => {
+const QuestionBody = ({ question }) => {
   return (
     <Comment
       author={<a>{question.owner.display_name}</a>}

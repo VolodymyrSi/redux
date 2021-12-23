@@ -1,12 +1,14 @@
-import "antd/dist/antd.css";
-import { Pagination, Select } from "antd";
-import { fetchQuestions } from "../../api/questionsApi";
 import { useDispatch, useSelector } from "react-redux";
 import { Option } from "antd/es/mentions";
+import { Pagination, Select } from "antd";
+
+import { fetchQuestions } from "../../api/questionsApi";
+
 import {
   setCurrentPage,
   setQuestionsPerPage,
 } from "../../store/questionsReducer";
+
 import {
   DEFAULT_ITEMS_PER_PAGE,
   DEFAULT_PAGE,

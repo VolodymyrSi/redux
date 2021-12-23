@@ -2,12 +2,12 @@ import { useDispatch, useSelector, connect } from "react-redux";
 import { useEffect } from "react";
 import { Layout } from "antd";
 
-import { fetchQuestions } from "../../../api/questionsApi";
 import QuestionItem from "./QuestionItem/QuestionItem";
 import LoadingSpinner from "../../features/LoadingSpinner";
 import PageFooter from "../PageFooter";
 import CustomPagination from "../../features/CustomPagination";
 import QuestionHeader from "./QuestionHeader";
+import { fetchQuestions } from "../../../api/questionsApi";
 
 const { Content } = Layout;
 

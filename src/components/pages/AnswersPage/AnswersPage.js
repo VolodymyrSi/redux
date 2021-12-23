@@ -1,15 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchAnswers } from "../../../api/answersApi";
-import { AnswerItem } from "./AnswerItem/AnswerItem";
 import { Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
+
 import LoadingSpinner from "../../features/LoadingSpinner";
 import PageFooter from "../PageFooter";
 import AnswersHeader from "./AnswersHeader";
+import { fetchAnswers } from "../../../api/answersApi";
+import { AnswerItem } from "./AnswerItem/AnswerItem";
 
-export const AnswersPage = () => {
+const AnswersPage = () => {
   const dispatch = useDispatch();
   const answers = useSelector((state) => state.answers.items);
 
@@ -37,3 +38,5 @@ export const AnswersPage = () => {
     </Layout>
   );
 };
+
+export default AnswersPage;
