@@ -17,9 +17,7 @@ export const AllQuestions = (props) => {
   const isFetching = useSelector((state) => state.questions.isFetching);
 
   useEffect(() => {
-    console.log(questions);
     dispatch(fetchQuestions());
-    console.log(questions);
   }, []);
 
   return (
