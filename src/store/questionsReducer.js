@@ -43,17 +43,17 @@ export const setIsFetching = (bool) => ({
   payload: bool,
 });
 
-export const SetCurrentPage = (page) => ({
+export const setCurrentPage = (page) => ({
   type: SET_CURRENT_PAGE,
   payload: page,
 });
 
-export const SetQuestionsPerPage = (number) => ({
+export const setQuestionsPerPage = (number) => ({
   type: SET_QUESTIONS_PER_PAGE,
   payload: number,
 });
 
-export const SetFilter = (filter) => ({
+export const setFilter = (filter) => ({
   type: SET_FILTER,
   payload: filter,
 });
