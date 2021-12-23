@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Option } from "antd/es/mentions";
 import { Pagination, Select } from "antd";
 
@@ -17,6 +18,7 @@ import {
 
 const CustomPagination = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const questionsNumber = useSelector((state) => state.questions.items.total);
   const currentPageNumber = useSelector((state) => state.questions.currentPage);
@@ -25,6 +27,7 @@ const CustomPagination = () => {
   const handleChange = (page, pageSize, sort) => {
     dispatch(setCurrentPage(page));
     dispatch(setQuestionsPerPage(pageSize));
+    navigate(`/${page}`);
     dispatch(fetchQuestions(page, pageSize, sort));
   };
 
