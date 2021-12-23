@@ -1,9 +1,15 @@
+import {
+  DEFAULT_FILTER,
+  DEFAULT_ITEMS_PER_PAGE,
+  DEFAULT_PAGE,
+} from "../constants";
+
 const initialState = {
   items: [],
   isFetching: true,
-  currentPage: 1,
-  questionsPerPage: 20,
-  filter: "activity",
+  currentPage: DEFAULT_PAGE,
+  questionsPerPage: DEFAULT_ITEMS_PER_PAGE,
+  filter: DEFAULT_FILTER,
 };
 
 const ADD_QUESTIONS = "ADD_QUESTIONS";

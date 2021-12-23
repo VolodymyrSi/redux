@@ -2,8 +2,8 @@ import { useDispatch, useSelector, connect } from "react-redux";
 import { useEffect } from "react";
 import { Layout } from "antd";
 
-import { fetchQuestions } from "../../../ApiRequests/questionsApi";
-import QuestionItem from "../../items/QuestionItem/QuestionItem";
+import { fetchQuestions } from "../../../api/questionsApi";
+import QuestionItem from "./QuestionItem/QuestionItem";
 import LoadingSpinner from "../../features/LoadingSpinner";
 import PageFooter from "../PageFooter";
 import CustomPagination from "../../features/CustomPagination";

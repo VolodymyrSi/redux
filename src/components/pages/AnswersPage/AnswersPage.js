@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchAnswers } from "../../../ApiRequests/answersApi";
-import { AnswerItem } from "../../items/AnswerItem/AnswerItem";
+import { fetchAnswers } from "../../../api/answersApi";
+import { AnswerItem } from "./AnswerItem/AnswerItem";
 import { Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
 import LoadingSpinner from "../../features/LoadingSpinner";
