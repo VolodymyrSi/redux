@@ -1,15 +1,43 @@
 const initialState = {
+  items: [],
+  isFetching: true,
+  currentPage: 1,
+  questionsPerPage: 20,
+  filter: "activity",
 };
 
 const ADD_QUESTIONS = "ADD_QUESTIONS";
+const SET_IS_FETCHING = "SET_IS_FETCHING";
+const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 
 export const questionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_QUESTIONS:
-      return { ...state, items: {...state.items, ...action.payload} };
+      return {
+        ...state,
+        items: { ...state.items, ...action.payload },
+        isFetching: false,
+      };
+    case SET_IS_FETCHING:
+      return { ...state, isFetching: action.payload };
+    case SET_CURRENT_PAGE:
+      return { ...state, currentPage: action.payload };
     default:
       return state;
   }
 };
 
-export const addQuestionsAction = (payload) => ({ type: ADD_QUESTIONS , payload });
+export const addQuestionsAction = (questions) => ({
+  type: ADD_QUESTIONS,
+  payload: questions,
+});
+
+export const setIsFetching = (bool) => ({
+  type: SET_IS_FETCHING,
+  payload: bool,
+});
+
+export const SetCurrentPage = (page) => ({
+  type: SET_CURRENT_PAGE,
+  payload: page,
+});

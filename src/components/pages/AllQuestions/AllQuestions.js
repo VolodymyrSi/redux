@@ -14,16 +14,20 @@ const { Content } = Layout;
 export const AllQuestions = (props) => {
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questions.items);
+  const isFetching = useSelector((state) => state.questions.isFetching);
+  // const currentPage = useSelector(state => state.questions.currentPage)
 
   useEffect(() => {
+    console.log(questions);
     dispatch(fetchQuestions());
+    console.log(questions);
   }, []);
 
   return (
     <Layout className="layout">
       <QuestionHeader />
-      {!questions && <LoadingSpinner />}
-      {questions && (
+      {isFetching && <LoadingSpinner />}
+      {!isFetching && (
         <div>
           <Content style={{ padding: "0 50px" }}>
             <div style={{ margin: "16px 0" }} className="site-layout-content">
