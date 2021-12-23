@@ -15,7 +15,7 @@ export const AllQuestions = (props) => {
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questions.items);
   const isFetching = useSelector((state) => state.questions.isFetching);
-  // const currentPage = useSelector(state => state.questions.currentPage)
+  const currentPage = useSelector(state => state.questions.currentPage)
 
   useEffect(() => {
     console.log(questions);
